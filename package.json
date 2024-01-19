@@ -19,10 +19,10 @@
     "classnames": "^2.5.1",
     "contentful": "^10.6.16",
     "file-loader": "^6.2.0",
-    "next": "14.0.4",
+    "next": "^14.1.0",
     "pdfjs-dist": "^3.10.111",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-pdf": "^7.7.0",
     "styled-components": "^6.1.8"
   },
@@ -31,7 +31,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4",
+    "eslint-config-next": "^14.1.0",
     "raw-loader": "^4.0.2",
     "typescript": "^5"
   }

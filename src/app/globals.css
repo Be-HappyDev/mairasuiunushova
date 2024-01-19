@@ -1,5 +1,5 @@
 :root {
-  --grey-color: #B2B0C7;
+  --grey-color: #b2b0c7;
   --black-color: #000000;
 }
 
@@ -26,8 +26,6 @@ a {
   padding: 0 15px;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  /* flex-direction: column;
-  justify-content: space-between; */
   overflow-x: hidden;
 }
 

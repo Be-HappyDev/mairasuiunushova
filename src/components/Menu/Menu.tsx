@@ -30,15 +30,15 @@ const routes: IRoutes[] = [
   },
   {
     title: "Проекты",
-    url: "/projects",
+    url: "projects",
   },
   {
     title: "Обо мне",
-    url: "/about-me",
+    url: "about-me",
   },
   {
     title: "Резюме",
-    url: "/cv",
+    url: "cv",
   },
 ];
 

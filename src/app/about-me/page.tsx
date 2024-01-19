@@ -4,11 +4,10 @@ import { Typography } from "@mui/material";
 import styles from "./About.module.css";
 
 export const metadata = {
-  title: 'About me',
+  title: "About me",
+};
 
-}
-
-const About = async () => {
+export default async function About() {
   const data = await getAboutPage();
   const myImage = data.myImage.fields.file.url;
   const Email = data.aboutContacts.fields.email;
@@ -46,5 +45,3 @@ const About = async () => {
     </div>
   );
 };
-
-export default About;

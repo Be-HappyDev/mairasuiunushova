@@ -5,11 +5,9 @@ import { getHome } from "@/contentful";
 import Link from "next/link";
 import { IProjItem } from "@/interfaces/project.interface";
 
- 
 export const metadata = {
-  title: 'Maira Suiunushova',
-
-}
+  title: "Maira Suiunushova",
+};
 
 export default async function Home() {
   const data = await getHome();
@@ -22,7 +20,7 @@ export default async function Home() {
           <img src={`https:${image}`} alt={`${data.mainBanner.fields.title}`} />
         </div>
         <Typography variant="h2" component="h2">
-          {data.userName}
+          {data?.userName}
         </Typography>
       </div>
 
@@ -35,7 +33,7 @@ export default async function Home() {
       <div className={styles.projects}>
         {data.mainProjects.map((el: IProjItem) => (
           <div key={el.fields.title} className={styles.projectCard}>
-            <Link href={`/projects/${el.fields.slug}`}>
+            <Link href={`projects/${el.fields.slug}`}>
               <img
                 src={`https:${el.fields.image.fields.file.url}`}
                 alt={el.fields.image.fields.title}
@@ -44,7 +42,7 @@ export default async function Home() {
           </div>
         ))}
         <div className={styles.projectCard}>
-          <Link href={`/projects`}>
+          <Link href={`projects`}>
             <img src={"./projects.webp"} alt={"other projects"} />
           </Link>
         </div>

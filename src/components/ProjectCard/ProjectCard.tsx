@@ -13,7 +13,7 @@ interface IProps {
   slug: string;
 }
 
-export default function ProjectCard({ title, description, url, slug }: IProps) {
+export const ProjectCard = ({ title, description, url, slug }: IProps) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia sx={{ height: 180 }} image={`https:${url}`} title={title} />
@@ -22,7 +22,7 @@ export default function ProjectCard({ title, description, url, slug }: IProps) {
           {title}
         </Typography>
         <Typography
-        sx={{ display: {xs: "none", md:"block"} }}
+          sx={{ display: { xs: "none", md: "block" } }}
           style={{ maxHeight: "200px", overflow: "hidden" }}
           variant="body2"
           color="text.secondary"
@@ -31,10 +31,10 @@ export default function ProjectCard({ title, description, url, slug }: IProps) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link href={`/projects/${slug}`}>
-        <Button size="small">Подробнее</Button>
+        <Link href={`projects/${slug}`}>
+          <Button size="small">Подробнее</Button>
         </Link>
       </CardActions>
     </Card>
   );
-}
+};

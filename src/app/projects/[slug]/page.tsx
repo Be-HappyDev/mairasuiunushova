@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { getProjects, getProjectsBySlug } from "@/contentful";
 import { IProjItem } from "@/interfaces/project.interface";
-import { Box,Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export async function generateStaticParams() {
   const projectsData = await getProjects();
@@ -23,7 +23,7 @@ interface IProject {
   };
 }
 
-export const revalidate = 5000;
+// export const revalidate = 5000;
 
 const Project = async ({ params: { slug } }: { params: { slug: string } }) => {
   const project: IProject = await getProjectsBySlug(slug);
@@ -39,16 +39,24 @@ const Project = async ({ params: { slug } }: { params: { slug: string } }) => {
       }}
     >
       <Box component={"div"} sx={{}}>
-        <Typography variant="h2" component={"h2"} sx={{
-          fontSize: { xs: "25px", md: "30px"}
-        }}>
+        <Typography
+          variant="h2"
+          component={"h2"}
+          sx={{
+            fontSize: { xs: "25px", md: "30px" },
+          }}
+        >
           {project.title}
         </Typography>
       </Box>
-      <Box component={"div"} sx={{ maxWidth: "320px"}}>
-        <img src={`https:${url}`} alt={title} style={{
-          width: "100%",
-        }} />
+      <Box component={"div"} sx={{ maxWidth: "320px" }}>
+        <img
+          src={`https:${url}`}
+          alt={title}
+          style={{
+            width: "100%",
+          }}
+        />
       </Box>
       <Box component={"div"} sx={{}}>
         <Typography variant="body2" color="text.secondary">
