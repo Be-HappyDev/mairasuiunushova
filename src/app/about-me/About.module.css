@@ -1,0 +1,61 @@
+.contactsBlock p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.aboutMe {
+  margin-bottom: 20px;
+}
+.aboutPage {
+  padding: 60px 0;
+}
+
+.aboutMeInfo p {
+  margin-top: 20px;
+}
+
+.myImage {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts h3,
+.aboutMe h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .aboutPage {
+    display: grid;
+    padding: 60px 0;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 60px;
+  }
+
+  .contactsBlock p {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .aboutMeInfo {
+    display: flex;
+  }
+
+  .aboutMeInfo p {
+    align-self: flex-end;
+  }
+
+  .myImage {
+    margin-right: 15px;
+  }
+
+  .contactsBlock p {
+    margin-bottom: 10px;
+  }
+  .contacts h3,
+  .aboutMe h3 {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+}

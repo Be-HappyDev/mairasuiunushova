@@ -1,0 +1,24 @@
+.nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navli {
+  color: var(--grey-color);
+}
+
+.activePage {
+  color: var(--black-color);
+}
+
+.navli:not(:last-child) {
+  margin-right: 10px;
+}
+.navli:hover {
+  color: var(--black-color);
+  transition: all ease-in-out .5s;
+}

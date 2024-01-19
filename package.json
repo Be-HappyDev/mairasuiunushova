@@ -11,10 +11,20 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.4",
+    "@mui/icons-material": "^5.15.5",
+    "@mui/material": "^5.15.5",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.12",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
+    "classnames": "^2.5.1",
+    "contentful": "^10.6.16",
+    "file-loader": "^6.2.0",
     "next": "14.0.4",
+    "pdfjs-dist": "^3.10.111",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-pdf": "^7.7.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -22,6 +32,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "raw-loader": "^4.0.2",
     "typescript": "^5"
   }
 }

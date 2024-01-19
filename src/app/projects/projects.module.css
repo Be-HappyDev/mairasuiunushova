@@ -1,0 +1,5 @@
+@media screen and (max-width: 615px) {
+    .myGrid {
+        justify-content: center;
+    }
+}
