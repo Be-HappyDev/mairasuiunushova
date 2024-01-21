@@ -12,7 +12,6 @@ export const revalidate = 5000;
 
 export default async function Projects() {
   const data = await getProjects();
-
   return (
     <div className={styles.projectsPage}>
       <Typography variant="h2" component={"h2"}>
@@ -26,12 +25,7 @@ export default async function Projects() {
         {data ? (
           data.projects.map((project: IProjItem) => (
             <Grid item xs={7} md={4} key={project.fields.slug}>
-              <ProjectCard
-                title={project.fields.title}
-                description={project.fields.description}
-                url={project.fields.image.fields.file.url}
-                slug={project.fields.slug}
-              />
+              <ProjectCard fields={project.fields} />
             </Grid>
           ))
         ) : (

@@ -1,3 +1,4 @@
+"use client";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -5,21 +6,22 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
+import { useChangeLang } from "@/store/store";
+import { IProjItem } from "@/interfaces/project.interface";
 
-interface IProps {
-  title: string;
-  description: string;
-  url: string;
-  slug: string;
-}
+export const ProjectCard = ({ fields }: any) => {
+  const lang = useChangeLang((state) => state.lang);
 
-export const ProjectCard = ({ title, description, url, slug }: IProps) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 180 }} image={`https:${url}`} title={title} />
+      <CardMedia
+        sx={{ height: 180 }}
+        image={`https:${fields.image.fields.file.url}`}
+        title={fields.title_en}
+      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {title}
+          {fields[`title_${lang}`]}
         </Typography>
         <Typography
           sx={{ display: { xs: "none", md: "block" } }}
@@ -27,11 +29,11 @@ export const ProjectCard = ({ title, description, url, slug }: IProps) => {
           variant="body2"
           color="text.secondary"
         >
-          {description}
+          {fields[`description_${lang}`]}
         </Typography>
       </CardContent>
       <CardActions>
-        <Link href={`projects/${slug}`}>
+        <Link href={`projects/${fields.slug}`}>
           <Button size="small">Подробнее</Button>
         </Link>
       </CardActions>

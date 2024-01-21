@@ -1,5 +1,5 @@
 const contentful = require("contentful");
-const CFUL_ACCESS_TOKEN = process.env.CFUL_ACCESS_TOKEN
+const CFUL_ACCESS_TOKEN = process.env.CFUL_ACCESS_TOKEN;
 
 const client = contentful?.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms

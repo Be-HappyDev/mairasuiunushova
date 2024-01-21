@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
+import { ProjectPageSlug } from "@/components/ProjectPageSlug/ProjectPageSlug";
 import { getProjects, getProjectsBySlug } from "@/contentful";
 import { IProjItem } from "@/interfaces/project.interface";
-import { Box, Typography } from "@mui/material";
 
 export async function generateStaticParams() {
   const projectsData = await getProjects();
@@ -12,8 +11,10 @@ export async function generateStaticParams() {
 }
 
 interface IProject {
-  title: string;
-  description: string;
+  title_en: string;
+  title_ru: string;
+  description_en: string;
+  description_ru: string;
   image: {
     fields: {
       file: {
@@ -23,47 +24,23 @@ interface IProject {
   };
 }
 
-// export const revalidate = 5000;
+export const revalidate = 5000;
 
 const Project = async ({ params: { slug } }: { params: { slug: string } }) => {
   const project: IProject = await getProjectsBySlug(slug);
   const url = project.image.fields.file.url;
-  const title = project.title;
+  const title = project.title_en;
+  const projectInfo = {
+    title_en: project.title_en,
+    title_ru: project.title_ru,
+    description_en: project.description_en,
+    description_ru: project.description_ru,
+  };
 
   return (
-    <Box
-      component={"div"}
-      sx={{
-        paddingTop: "30px",
-        paddingbottom: "30px",
-      }}
-    >
-      <Box component={"div"} sx={{}}>
-        <Typography
-          variant="h2"
-          component={"h2"}
-          sx={{
-            fontSize: { xs: "25px", md: "30px" },
-          }}
-        >
-          {project.title}
-        </Typography>
-      </Box>
-      <Box component={"div"} sx={{ maxWidth: "320px" }}>
-        <img
-          src={`https:${url}`}
-          alt={title}
-          style={{
-            width: "100%",
-          }}
-        />
-      </Box>
-      <Box component={"div"} sx={{}}>
-        <Typography variant="body2" color="text.secondary">
-          {project.description}
-        </Typography>
-      </Box>
-    </Box>
+    <>
+      <ProjectPageSlug info={projectInfo} url={url} title={title} />
+    </>
   );
 };
 export default Project;

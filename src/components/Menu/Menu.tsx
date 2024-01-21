@@ -17,27 +17,43 @@ import styles from "./Menu.module.css";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import { useState } from "react";
+import { useChangeLang } from "@/store/store";
 
 interface IRoutes {
-  title: string;
+  title: {
+    [key: string]: string;
+    ru: string;
+  };
   url: string;
 }
 
 const routes: IRoutes[] = [
   {
-    title: "Главная",
+    title: {
+      en: "Home",
+      ru: "Главная",
+    },
     url: "/",
   },
   {
-    title: "Проекты",
-    url: "projects",
+    title: {
+      en: "Projects",
+      ru: "Проекты",
+    },
+    url: "/projects",
   },
   {
-    title: "Обо мне",
-    url: "about-me",
+    title: {
+      en: "About me",
+      ru: "Обо мне",
+    },
+    url: "/about-me",
   },
   {
-    title: "Резюме",
+    title: {
+      en: "Cv",
+      ru: "Резюме",
+    },
     url: "cv",
   },
 ];
@@ -56,6 +72,7 @@ export const Menu = (props: Props) => {
   const pathName = usePathname();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, changeLang } = useChangeLang((state) => state);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -75,11 +92,17 @@ export const Menu = (props: Props) => {
           >
             <Link href={`${route.url}`}>
               <ListItemButton sx={{ textAlign: "center" }}>
-                {route.title}
+                {route.title[lang]}
               </ListItemButton>
             </Link>
           </ListItem>
         ))}
+
+        <ListItem disablePadding>
+          <Button sx={{ color: "#000" }} onClick={() => changeLang()}>
+            {lang}
+          </Button>
+        </ListItem>
       </List>
     </Box>
   );
@@ -120,11 +143,12 @@ export const Menu = (props: Props) => {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {routes.map((item) => (
               <Link key={item.url} href={`${item.url}`}>
-                <Button  sx={{ color: "#000" }}>
-                  {item.title}
-                </Button>
+                <Button sx={{ color: "#000" }}>{item.title[lang]}</Button>
               </Link>
             ))}
+            <Button sx={{ color: "#000" }} onClick={() => changeLang()}>
+              {lang}
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
