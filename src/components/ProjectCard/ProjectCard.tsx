@@ -13,7 +13,7 @@ export const ProjectCard = ({ fields }: any) => {
   const lang = useChangeLang((state) => state.lang);
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, width: "100%" }}>
       <CardMedia
         sx={{ height: 180 }}
         image={`https:${fields.image.fields.file.url}`}

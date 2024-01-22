@@ -19,10 +19,12 @@
     "classnames": "^2.5.1",
     "contentful": "^10.6.16",
     "file-loader": "^6.2.0",
+    "mui-markdown": "^1.1.13",
     "next": "^14.1.0",
     "pdfjs-dist": "^3.10.111",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
     "react-pdf": "^7.7.0",
     "styled-components": "^6.1.8",
     "zustand": "^4.5.0"

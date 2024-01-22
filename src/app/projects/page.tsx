@@ -8,13 +8,16 @@ export const metadata = {
   title: "Projects",
 };
 
-export const revalidate = 6;
+export const revalidate = 3;
 
 export default async function Projects() {
   const data = await getProjects();
   return (
     <div className={styles.projectsPage}>
-      <Typography variant="h2" component={"h2"}>
+      <Typography variant="h2" component={"h2"} sx={{
+        textAlign: {xs: 'center', md: 'left'},
+        marginBottom: "30px"
+      }}>
         {data.title}
       </Typography>
       <Grid
@@ -24,7 +27,15 @@ export default async function Projects() {
       >
         {data ? (
           data.projects.map((project: IProjItem) => (
-            <Grid item xs={7} md={4} key={project.fields.slug}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              key={project.fields.slug}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
               <ProjectCard fields={project.fields} />
             </Grid>
           ))

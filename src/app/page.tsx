@@ -10,7 +10,7 @@ export const metadata = {
   title: "Maira Suiunushova",
 };
 
-export const revalidate = 6
+export const revalidate = 3
 
 
 export default async function Home() {
@@ -31,7 +31,7 @@ export default async function Home() {
         contentData={data.contentInfoHome}
       />
 
-      <div className={styles.projects}>
+      {/* <div className={styles.projects}>
         {data.mainProjects.map((el: IProjItem) => (
           <div key={el.fields.slug} className={styles.projectCard}>
             <Link href={`projects/${el.fields.slug}`}>
@@ -47,7 +47,7 @@ export default async function Home() {
             <img src={"./projects.webp"} alt={"other projects"} />
           </Link>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

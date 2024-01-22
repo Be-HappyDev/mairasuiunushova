@@ -32,7 +32,11 @@ export const AboutPage = ({ aboutInfo, contacts, url }: IProps) => {
 
         <div className={styles.aboutMeInfo}>
           <div className={styles.myImage}>
-            <img src={`https:${url}`} alt={aboutInfo.aboutMe_en} />
+            {url ? (
+              <img src={`https:${url}`} alt={aboutInfo.aboutMe_en} />
+            ) : (
+              <></>
+            )}
           </div>
           <Typography variant="body1">
             {aboutInfo[`aboutMe_${lang}`]}
@@ -50,7 +54,7 @@ export const AboutPage = ({ aboutInfo, contacts, url }: IProps) => {
           </Typography>
           <Typography variant="body1">
             <a href={`tel:${contacts.phoneNumber}`}>
-              Телефон: +{contacts.phoneNumber}
+              Телефон: +1{contacts.phoneNumber}
             </a>
           </Typography>
         </div>

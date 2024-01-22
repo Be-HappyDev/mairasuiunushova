@@ -24,7 +24,7 @@ interface IProject {
   };
 }
 
-export const revalidate = 6;
+export const revalidate = 3;
 
 const Project = async ({ params: { slug } }: { params: { slug: string } }) => {
   const project: IProject = await getProjectsBySlug(slug);
