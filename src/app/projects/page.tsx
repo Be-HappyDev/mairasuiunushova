@@ -8,7 +8,7 @@ export const metadata = {
   title: "Projects",
 };
 
-export const revalidate = 5000;
+export const revalidate = 6;
 
 export default async function Projects() {
   const data = await getProjects();

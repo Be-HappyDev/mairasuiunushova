@@ -5,6 +5,9 @@ export const metadata = {
   title: "About me",
 };
 
+export const revalidate = 6
+
+
 export default async function About() {
   const data = await getAboutPage();
   const imageUrl = data.myImage.fields.file.url;

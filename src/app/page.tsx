@@ -10,6 +10,9 @@ export const metadata = {
   title: "Maira Suiunushova",
 };
 
+export const revalidate = 6
+
+
 export default async function Home() {
   const data = await getHome();
 
