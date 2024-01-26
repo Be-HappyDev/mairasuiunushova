@@ -1,6 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 import { useChangeLang } from "@/store/store";
 import styles from "./About.module.css";
@@ -18,7 +18,8 @@ interface IProps {
     email: string;
     phoneNumber: number;
   };
-  certificates: { fields: { file: { url: "string" } } }[];
+    certificates: { fields: { file: { url: "string" } } }[];
+    socialNetworks: { fields: { title: string; linkToSocialNetwork: string; }}[]
   url: string;
 }
 
@@ -26,7 +27,8 @@ export const AboutPage = ({
   aboutInfo,
   contacts,
   url,
-  certificates,
+    certificates,
+   socialNetworks
 }: IProps) => {
   const lang = useChangeLang((state) => state.lang);
 
@@ -103,7 +105,12 @@ export const AboutPage = ({
               <a href={`tel:${contacts.phoneNumber}`}>
                 Телефон: +1{contacts.phoneNumber}
               </a>
-            </Typography>
+                      </Typography>
+                      <Box component={'div'}>
+                          {
+                              socialNetworks.map((item) => (<a className={styles.socialNetwork} key={item.fields.title} href={item.fields.linkToSocialNetwork} > {item.fields.title}</a>))
+                          }
+                      </Box>
           </div>
         </Grid>
         <Grid container item spacing={2} xs={12}>

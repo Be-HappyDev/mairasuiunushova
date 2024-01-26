@@ -1,6 +1,7 @@
 import { getAboutPage } from "@/contentful";
 import { AboutPage } from "@/components/AboutPage/AboutPage";
 
+
 export const metadata = {
   title: "About me",
 };
@@ -15,7 +16,8 @@ export default async function About() {
     address: data.aboutContacts.fields.address,
     email: data.aboutContacts.fields.email,
     phoneNumber: data.aboutContacts.fields.phoneNumber,
-  };
+    };
+;
 
   const aboutInfo = {
     pageTitle_en: data.pageTitle_en,
@@ -24,5 +26,5 @@ export default async function About() {
     aboutMe_ru: data.aboutMe_ru,
   };
   
-  return <AboutPage aboutInfo={aboutInfo} contacts={contacts} url={imageUrl} certificates={data.certificates} />;
+    return <AboutPage aboutInfo={aboutInfo} contacts={contacts} url={imageUrl} certificates={data.certificates} socialNetworks={data.socialNetworks} />;
 }
