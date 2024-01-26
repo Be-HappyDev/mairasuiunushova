@@ -18,8 +18,8 @@ interface IProps {
     email: string;
     phoneNumber: number;
   };
-    certificates: { fields: { file: { url: "string" } } }[];
-    socialNetworks: { fields: { title: string; linkToSocialNetwork: string; }}[]
+  certificates: { fields: { file: { url: "string" } } }[];
+  socialNetworks: { fields: { title: string; linkToSocialNetwork: string } }[];
   url: string;
 }
 
@@ -27,8 +27,8 @@ export const AboutPage = ({
   aboutInfo,
   contacts,
   url,
-    certificates,
-   socialNetworks
+  certificates,
+  socialNetworks,
 }: IProps) => {
   const lang = useChangeLang((state) => state.lang);
 
@@ -84,15 +84,6 @@ export const AboutPage = ({
                 marginBottom: "20px",
               }}
             >
-              {contacts.address}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                textAlign: { xs: "center", md: "left" },
-                marginBottom: "20px",
-              }}
-            >
               <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
             </Typography>
             <Typography
@@ -105,12 +96,25 @@ export const AboutPage = ({
               <a href={`tel:${contacts.phoneNumber}`}>
                 Телефон: +1{contacts.phoneNumber}
               </a>
-                      </Typography>
-                      <Box component={'div'}>
-                          {
-                              socialNetworks.map((item) => (<a className={styles.socialNetwork} key={item.fields.title} href={item.fields.linkToSocialNetwork} > {item.fields.title}</a>))
-                          }
-                      </Box>
+            </Typography>
+            <Box component={"div"} sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: {xs: "center", md: "flex-start"},
+              justifyContent: "center"
+            }}>
+              {socialNetworks.map((item) => (
+                <a
+                  className={styles.socialNetwork}
+                  key={item.fields.title}
+                  href={item.fields.linkToSocialNetwork}
+                  target="_blank"
+                >
+                  {" "}
+                  {item.fields.title}
+                </a>
+              ))}
+            </Box>
           </div>
         </Grid>
         <Grid container item spacing={2} xs={12}>

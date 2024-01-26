@@ -7,10 +7,14 @@
   text-align: center;
 }
 
-    .socialNetwork:hover {
-        text-decoration: underline;
-        transition: all ease 1s;
-    }
+.socialNetwork {
+  text-decoration: underline;
+  transition: all ease 1s;
+}
+.socialNetwork:hover {
+  text-decoration: none;
+  transition: all ease 1s;
+}
 
 .myImage {
   display: flex;
