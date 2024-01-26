@@ -51,7 +51,7 @@ const routes: IRoutes[] = [
   },
   {
     title: {
-      en: "Cv",
+      en: "Resume",
       ru: "Резюме",
     },
     url: "cv",

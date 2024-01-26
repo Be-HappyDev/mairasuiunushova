@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./page.module.css";
 import { getHome } from "@/contentful";
-import Link from "next/link";
-import { IProjItem } from "@/interfaces/project.interface";
 import { UserName } from "@/components/UserName/UserName";
 import { ContentInfo } from "@/components/HomeContentInfo/ContentInfo";
 
@@ -10,15 +8,15 @@ export const metadata = {
   title: "Maira Suiunushova",
 };
 
-export const revalidate = 3
-
+export const revalidate = 3;
 
 export default async function Home() {
   const data = await getHome();
+  const personImage = data.personImage.fields.file.url;
 
   const image = data.mainBanner.fields.file.url;
   return (
-    <main className={styles.main}>
+    <>
       <div className={styles.mainBanner}>
         <div className={styles.banner}>
           <img src={`https:${image}`} alt={`${data.mainBanner.fields.title}`} />
@@ -30,6 +28,12 @@ export default async function Home() {
         className={styles.contentInfo}
         contentData={data.contentInfoHome}
       />
+
+      <div className={styles.personImageWrap}>
+        <div className={styles.personImage}>
+          <img src={`https:${personImage}`} alt="Maira Suiunushova" />
+        </div>
+      </div>
 
       {/* <div className={styles.projects}>
         {data.mainProjects.map((el: IProjItem) => (
@@ -48,6 +52,6 @@ export default async function Home() {
           </Link>
         </div>
       </div> */}
-    </main>
+    </>
   );
 }
