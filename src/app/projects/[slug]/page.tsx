@@ -28,6 +28,7 @@ export const revalidate = 3;
 
 const Project = async ({ params: { slug } }: { params: { slug: string } }) => {
   const project: IProject = await getProjectsBySlug(slug);
+
   const url = project.image.fields.file.url;
   const title = project.title_en;
   const projectInfo = {

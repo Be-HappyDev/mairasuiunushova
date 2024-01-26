@@ -11,7 +11,6 @@ export const revalidate = 3
 export default async function About() {
   const data = await getAboutPage();
   const imageUrl = data?.myImage?.fields?.file?.url;
-
   const contacts = {
     address: data.aboutContacts.fields.address,
     email: data.aboutContacts.fields.email,
@@ -25,5 +24,5 @@ export default async function About() {
     aboutMe_ru: data.aboutMe_ru,
   };
   
-  return <AboutPage aboutInfo={aboutInfo} contacts={contacts} url={imageUrl} />;
+  return <AboutPage aboutInfo={aboutInfo} contacts={contacts} url={imageUrl} certificates={data.certificates} />;
 }

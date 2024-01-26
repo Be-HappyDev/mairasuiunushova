@@ -54,7 +54,7 @@ const routes: IRoutes[] = [
       en: "Resume",
       ru: "Резюме",
     },
-    url: "cv",
+    url: "/resume",
   },
 ];
 
