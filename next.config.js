@@ -7,6 +7,8 @@ const nextConfig = {
     });
     return config;
   },
+  trailingSlash: true,
+  output: 'export',
 };
 
 //

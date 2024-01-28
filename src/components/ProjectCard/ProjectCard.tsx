@@ -33,7 +33,7 @@ export const ProjectCard = ({ fields }: any) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link href={`projects/${fields.slug}`}>
+        <Link href={`/projects/${fields.slug}`}>
           <Button size="small">Подробнее</Button>
         </Link>
       </CardActions>
