@@ -56,6 +56,13 @@ const routes: IRoutes[] = [
     },
     url: "/resume",
   },
+  {
+    title: {
+      en: "Articles",
+      ru: "Статьи",
+    },
+    url: "/articles",
+  },
 ];
 
 interface Props {

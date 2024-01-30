@@ -53,3 +53,11 @@ export const getCvPdf = () => {
     .then((resp: any) => resp.items[0].fields)
     .catch((err: any) => console.log(err));
 };
+export const getArtclesPage = () => {
+  return client
+    .getEntries({
+      content_type: "articlesPage",
+    })
+    .then((resp: any) => resp.items[0].fields)
+    .catch((err: any) => console.log(err));
+};
