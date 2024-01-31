@@ -3,7 +3,10 @@ import PdfViewer from "@/components/PdfViewer/PdfViewer";
 import { getCvPdf } from "@/contentful";
 
 export const metadata = {
-  title: "Резюме/Cv",
+  title:
+    "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
+  description:
+    "Partner with Maira Suiunyshova for unparalleled IT consulting. Elevate your business with strategic solutions and visionary software engineering expertise.",
 };
 
 export const revalidate = 3;

@@ -1,0 +1,96 @@
+.page {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.articleBlock {
+  width: 100%;
+  /* height: 550px; */
+  box-shadow: 1px 1px 7px #00000029;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.articleTop {
+  display: grid;
+  grid-template-columns: 70% 20%;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.articleTitle,
+.articleDate {
+  padding: 10px;
+}
+
+.articleTitle {
+  width: 100%;
+  max-width: 800px;
+}
+
+.articleTitle h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.articleDate {
+  text-align: center;
+}
+
+.articleDate p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+.articleContent {
+  padding: 20px;
+}
+
+.articleContentBlock {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.articleImage {
+  width: 100%;
+  height: 200px;
+}
+
+.articleImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.articleDesc {
+  padding: 10px;
+}
+.articleFullDesc p,
+.articleDesc p {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 827px) {
+  .articleTop {
+    grid-template-columns: 1fr;
+  }
+  .articleTitle h5 {
+    text-align: center;
+  }
+  .articleContent {
+    padding: 20px 5px;
+  }
+  .articleContentBlock {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .articleFullDesc p,
+  .articleDesc p {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}

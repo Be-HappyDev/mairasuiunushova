@@ -3,7 +3,10 @@ import { AboutPage } from "@/components/AboutPage/AboutPage";
 
 
 export const metadata = {
-  title: "About me",
+  title:
+    "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
+  description:
+    "Partner with Maira Suiunyshova for unparalleled IT consulting. Elevate your business with strategic solutions and visionary software engineering expertise.",
 };
 
 export const revalidate = 3

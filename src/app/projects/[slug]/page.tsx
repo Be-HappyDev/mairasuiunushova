@@ -2,6 +2,13 @@ import { ProjectPageSlug } from "@/components/ProjectPageSlug/ProjectPageSlug";
 import { getProjects, getProjectsBySlug } from "@/contentful";
 import { IProjItem } from "@/interfaces/project.interface";
 
+export const metadata = {
+  title:
+    "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
+  description:
+    "Partner with Maira Suiunyshova for unparalleled IT consulting. Elevate your business with strategic solutions and visionary software engineering expertise.",
+};
+
 export async function generateStaticParams() {
   const projectsData = await getProjects();
 

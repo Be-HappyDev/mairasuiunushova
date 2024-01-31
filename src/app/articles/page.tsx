@@ -2,7 +2,10 @@ import { ArticlesPage } from "@/components/ArticlesPage/Articles";
 import { getArtclesPage } from "@/contentful";
 
 export const metadata = {
-  title: "Articles",
+  title:
+    "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
+  description:
+    "Partner with Maira Suiunyshova for unparalleled IT consulting. Elevate your business with strategic solutions and visionary software engineering expertise.",
 };
 
 const Articles = async () => {

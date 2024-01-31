@@ -5,7 +5,10 @@ import { Grid, Typography } from "@mui/material";
 import styles from "./projects.module.css";
 
 export const metadata = {
-  title: "Projects",
+  title:
+    "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
+  description:
+    "Partner with Maira Suiunyshova for unparalleled IT consulting. Elevate your business with strategic solutions and visionary software engineering expertise.",
 };
 
 export const revalidate = 3;
@@ -14,10 +17,14 @@ export default async function Projects() {
   const data = await getProjects();
   return (
     <div className={styles.projectsPage}>
-      <Typography variant="h2" component={"h2"} sx={{
-        textAlign: {xs: 'center', md: 'left'},
-        marginBottom: "30px"
-      }}>
+      <Typography
+        variant="h2"
+        component={"h2"}
+        sx={{
+          textAlign: { xs: "center", md: "left" },
+          marginBottom: "30px",
+        }}
+      >
         {data.title}
       </Typography>
       <Grid
