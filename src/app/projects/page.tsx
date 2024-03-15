@@ -5,6 +5,9 @@ import { Grid, Typography } from "@mui/material";
 import styles from "./projects.module.css";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://mairasuiunyshova.ru/projects/",
+  },
   title:
     "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
   description:

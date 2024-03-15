@@ -10,7 +10,7 @@ export const HomeArticles = ({ articles }: any) => {
   return (
     <div className={styles.page}>
       <Grid container justifyContent={"space-between"}>
-        {articles.map((article: any) => {
+        {articles?.map((article: any) => {
           return (
             <Grid
               className={styles.articleBlock}

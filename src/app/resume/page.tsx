@@ -3,6 +3,9 @@ import PdfViewer from "@/components/PdfViewer/PdfViewer";
 import { getCvPdf } from "@/contentful";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://mairasuiunyshova.ru/resume/",
+  },
   title:
     "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
   description:

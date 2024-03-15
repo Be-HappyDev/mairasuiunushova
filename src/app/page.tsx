@@ -8,6 +8,9 @@ import { log } from "console";
 import { HomeArticles } from "@/components/HomeArticles/HomeArticles";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://mairasuiunyshova.ru/",
+  },
   title:
     "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
   description:

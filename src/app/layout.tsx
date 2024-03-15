@@ -11,15 +11,18 @@ export const metadata: Metadata = {
     "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
   description:
     "Partner with Maira Suiunyshova for unparalleled IT consulting. Elevate your business with strategic solutions and visionary software engineering expertise.",
-    icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon.ico',
-      apple: '/favicon.icon',
-      other: {
-        rel: 'apple-touch-icon-precomposed',
-        url: '/favicon.ico',
-      },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.icon",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/favicon.ico",
     },
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

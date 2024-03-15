@@ -3,6 +3,9 @@ import { AboutPage } from "@/components/AboutPage/AboutPage";
 
 
 export const metadata = {
+  alternates: {
+    canonical: "https://mairasuiunyshova.ru/about-me/",
+  },
   title:
     "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
   description:

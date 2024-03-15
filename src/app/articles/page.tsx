@@ -2,6 +2,9 @@ import { ArticlesPage } from "@/components/ArticlesPage/Articles";
 import { getArtclesPage } from "@/contentful";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://mairasuiunyshova.ru/articles/",
+  },
   title:
     "Maira Suiunyshova - Empowering Business Success Through IT Innovation",
   description:
@@ -12,11 +15,11 @@ const Articles = async () => {
   const articles = await getArtclesPage();
 
   const titles = {
-    title_en: articles.pageTitle_en,
-    title_ru: articles.pageTitle_ru,
+    title_en: articles?.pageTitle_en,
+    title_ru: articles?.pageTitle_ru,
   };
 
-  return <ArticlesPage titles={titles} articles={articles.articles} />;
+  return <ArticlesPage titles={titles} articles={articles?.articles} />;
 };
 
 export default Articles;

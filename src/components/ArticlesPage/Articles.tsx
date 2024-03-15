@@ -45,7 +45,7 @@ export const ArticlesPage = ({ titles, articles }: any) => {
       </Typography>
       <div className="articles">
         <Grid container>
-          {articles.map((article: any) => {
+          {articles?.map((article: any) => {
             return (
               <Grid
                 className={styles.articleBlock}
