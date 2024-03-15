@@ -3,6 +3,7 @@
 import { Grid, Typography } from "@mui/material";
 import styles from "./Articles.module.css";
 import { useChangeLang } from "@/store/store";
+import Markdown from "react-markdown";
 
 // interface IProps {
 //   titles: {
@@ -38,9 +39,13 @@ export const ArticlesPage = ({ titles, articles }: any) => {
 
   return (
     <div className={styles.page}>
-      <Typography variant="h2" component={"h2"} sx={{
-        marginBottom: "20px"
-      }}>
+      <Typography
+        variant="h2"
+        component={"h2"}
+        sx={{
+          marginBottom: "20px",
+        }}
+      >
         {titles[`title_${lang}`]}
       </Typography>
       <div className="articles">
@@ -61,8 +66,15 @@ export const ArticlesPage = ({ titles, articles }: any) => {
                   </div>
                   <div className={styles.articleDate}>
                     <Typography variant="body2" component={"p"}>
-                      {lang === "en" ? "Date:" : "Дата:"}{" "}
-                      {article.fields.dateArticle}
+                      {article.fields.dateArticle ? (
+                        lang === "en" ? (
+                          `Date: ${article.fields.dateArticle}`
+                        ) : (
+                          `Дата: ${article.fields.dateArticle}`
+                        )
+                      ) : (
+                        <></>
+                      )}
                     </Typography>
                   </div>
                 </div>
@@ -76,15 +88,15 @@ export const ArticlesPage = ({ titles, articles }: any) => {
                         />
                       </div>
                       <div className={styles.articleDesc}>
-                        <Typography variant="body2" component={'p'}>
-                          {article.fields[`description_${lang}`]}
+                        <Typography variant="body2" component={"p"}>
+                          <Markdown>{article.fields[`description_${lang}`]}</Markdown>
                         </Typography>
                       </div>
                     </div>
                   ) : (
                     <div className={styles.articleFullDesc}>
-                      <Typography variant="body2" component={'p'}>
-                        {article.fields[`description_${lang}`]}
+                      <Typography variant="body2" component={"p"}>
+                      <Markdown>{article.fields[`description_${lang}`]}</Markdown>
                       </Typography>
                     </div>
                   )}
